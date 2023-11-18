@@ -4,10 +4,13 @@ namespace TriangleTest;
 
 public sealed class TriangleTest
 {
-    [Fact]
-    public void ValidSides_Test()
+    [Theory]
+    [InlineData(1, 2, 3)]
+    [InlineData(8, 6, 1)]
+    [InlineData(9, 20, 10)]
+    public void ValidSides_Test(uint a, uint b, uint c)
     {
-        Assert.Throws<ArgumentException>(() => new Triangle(new Sides(1, 2, 3)));
+        Assert.Throws<ArgumentException>(() => new Triangle(new Sides(a, b, c)));
     }
 
     [Fact]
@@ -24,15 +27,19 @@ public sealed class TriangleTest
         Assert.Equal(expected, actual);
     }
 
-    [Fact]
-    public void IsRectangular_Test()
+    [Theory]
+    [InlineData(6, 8, 10)]
+    [InlineData(24, 25, 7)]
+    [InlineData(65, 33, 56)]
+    public void IsRectangular_Test(uint a, uint b, uint c)
     {
         // Arrange
-        var triangle = new Triangle(new Sides(6, 8, 10));
+        var triangle = new Triangle(new Sides(a, b, c));
 
         // Act
-        var actual = triangle.IsRectangular;
+        var condition = triangle.IsRectangular;
 
-        Assert.True(actual, "Ошибка в проверке теоремы Пифагора");
+        // Assert
+        Assert.True(condition, "Ошибка в проверке теоремы Пифагора");
     }
 }

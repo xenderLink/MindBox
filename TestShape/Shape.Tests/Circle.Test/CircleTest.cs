@@ -4,10 +4,12 @@ namespace CircleTest;
 
 public sealed class CircleTest
 {
-    [Fact]
-    public void ValidRadius_Test()
+    [Theory]
+    [InlineData(-2)]
+    [InlineData(-10.3)]
+    public void ValidRadius_Test(double negativeRadius)
     {
-        Assert.Throws<ArgumentException>(() => new Circle(-2));
+        Assert.Throws<ArgumentException>(() => new Circle(negativeRadius));
     }
 
     [Fact]
