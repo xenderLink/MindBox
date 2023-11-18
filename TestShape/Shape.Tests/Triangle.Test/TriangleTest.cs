@@ -40,6 +40,6 @@ public sealed class TriangleTest
         var condition = triangle.IsRectangular;
 
         // Assert
-        Assert.True(condition, "Ошибка в проверке теоремы Пифагора");
+        Assert.True(condition, "Ошибка. Не проходит теорему Пифагора");
     }
 }
