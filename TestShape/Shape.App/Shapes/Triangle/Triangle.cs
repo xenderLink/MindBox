@@ -10,7 +10,7 @@ public sealed class Triangle : IShape
 
         if (!IsValid())
         {
-            throw new ArgumentException("Неправильные стороны треугольника");
+            throw new ArgumentException("Неправильные стороны треугольника!");
         }
     }
 
@@ -31,7 +31,7 @@ public sealed class Triangle : IShape
 
         if (IsRectangular)
         {
-            Console.Write("прямоугольный ");
+            Console.Write("Прямоугольный ");
         }
 
         Console.Write("треугольник с площадью ");

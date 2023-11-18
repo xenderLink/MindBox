@@ -1,4 +1,4 @@
-using Shape;
+п»їusing Shape;
 
 namespace TriangleTest;
 
@@ -40,6 +40,6 @@ public sealed class TriangleTest
         var condition = triangle.IsRectangular;
 
         // Assert
-        Assert.True(condition, "Ошибка. Не проходит теорему Пифагора");
+        Assert.True(condition, "РћС€РёР±РєР°. РўРµСЃС‚ РЅРµ РїСЂРѕС…РѕРґРёС‚ С‚РµРѕСЂРµРјСѓ РџРёС„Р°РіРѕСЂР°!");
     }
 }
